@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Kumbh Sans';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+hr {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menuList {
+  list-style-type: none;
+}
+
+.menuItem {
+  padding-right: 30px;
+  color: hsl(219, 9%, 45%);
+}
+
+.large-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+.thumbnails {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  /* Spread out the thumbnails */
+  width: 100%;
+  /* Make the thumbnails take the full width of the container */
+  max-width: 400px;
+  /* Set a maximum width for the thumbnails container */
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: calc((100% - 100px) / 4);
+  height: 100%;
+  object-fit: cover;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.thumbnail.active {
+  box-shadow: 0 0 0 2px hsl(26, 100%, 55%);
+}
+
+.productQtyContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 155px;
+  height: 55px;
+  background: hsl(223, 64%, 98%);
+  border-radius: 10px;
+}
+
+.productQtyBtn,
+.addToCartBtn {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#productQtyNum {
+  font-weight: 700;
+}
+
+.addToCartBtn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 255px;
+  height: 55px;
+  background: hsl(26, 100%, 55%);
+  border-radius: 10px;
   color: white;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#addToCartIcon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
 }
