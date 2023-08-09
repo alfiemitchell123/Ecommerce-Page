@@ -1,6 +1,3 @@
-import CartIcon from './CartIcon';
-import ProfilePhoto from '../images/image-avatar.png';
-
 function Navbar() {
     return (
         <nav className="nav">
@@ -11,9 +8,6 @@ function Navbar() {
                 <li className="menuItem d-inline">About</li>
                 <li className="menuItem d-inline">Contact</li>
             </ul>
-
-            <CartIcon />
-            <img src={ProfilePhoto} alt="You" width="50px" height="50px" />
         </nav>
     );
 }

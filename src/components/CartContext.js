@@ -7,11 +7,21 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }) => {
+    const [cartOpen, setCartOpen] = useState(false);
+
+    const handleMouseEnter = () => {
+        setCartOpen(true);
+    }
+
+    const handleMouseLeave = () => {
+        setCartOpen(false);
+    }
+
     const [cartItems, setCartItems] = useState([]);
 
     const addToCart = (quantity) => {
         setCartItems([...cartItems, { quantity }]);
     };
 
-    return <CartContext.Provider value={{ cartItems, addToCart }}>{children}</CartContext.Provider>
+    return <CartContext.Provider value={{ cartItems, addToCart, cartOpen, handleMouseEnter, handleMouseLeave }}>{children}</CartContext.Provider>
 }
