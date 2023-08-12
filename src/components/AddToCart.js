@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from './CartContext';
 
-const AddToCart = () => {
+const AddToCart = ({ productId }) => {
     const [quantity, setQuantity] = useState(1);
     const { addToCart } = useCart();
 
@@ -16,7 +16,7 @@ const AddToCart = () => {
     };
 
     const handleAddToCart = () => {
-        addToCart(quantity);
+        addToCart(productId, quantity);
         setQuantity(1);
     }
 

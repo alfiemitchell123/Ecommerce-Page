@@ -10,9 +10,11 @@ import ProfilePhoto from './images/image-avatar.png';
 import MobileMenu from './components/MobileMenu';
 import Cart from './components/Cart';
 import { useCart } from './components/CartContext';
+import products from './components/ProductsData';
 
 function App() {
   const { cartOpen } = useCart();
+  const product = products[0];
 
   return (
     <div className="App">
@@ -23,7 +25,6 @@ function App() {
             <img className="d-inline" id="logo" src={logo} alt="sneakers" draggable="false" />
             <Navbar></Navbar>
             <CartIcon />
-            {cartOpen && <Cart />}
             <img id="profile-photo" src={ProfilePhoto} alt="You" width="40px" height="40px" draggable="false" />
           </header>
           <hr />
@@ -33,7 +34,7 @@ function App() {
             <ThumbnailGallery />
           </div>
           <div className="col-4 product-content">
-            <ProductInfo />
+            <ProductInfo product={product} />
           </div>
         </div>
       </div>

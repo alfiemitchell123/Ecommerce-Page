@@ -1,18 +1,20 @@
+import React from 'react';
 import AddToCart from "./AddToCart";
 
-const ProductInfo = () => {
+const ProductInfo = ({ product }) => {
+    const formattedPrice = product.price.toFixed(2);
+
     return (
         <div className="infoContainer">
             <h3 className="companyTitle">Sneaker Company</h3>
-            <h1 className="productName">Fall Limited Edition Sneakers</h1>
-            <p className="productDescription">These low profile sneakers are your perfect casual wear companion.
-                Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+            <h1 className="productName">{product.name}</h1>
+            <p className="productDescription">{product.description}</p>
             <div className="priceContainer">
-                <h2 className="price">$125.00</h2>
-                <div className="discount">50%</div>
-                <h4 className="oldPrice">$250.00</h4>
+                <h2 className="price">${formattedPrice}</h2>
+                <div className="discount">{product.discount}</div>
+                <h4 className="oldPrice">${(product.price * 2).toFixed(2)}</h4>
             </div>
-            <AddToCart />
+            <AddToCart productId={product.id} />
         </div>
     )
 }
