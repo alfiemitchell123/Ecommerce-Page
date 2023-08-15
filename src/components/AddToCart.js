@@ -23,12 +23,12 @@ const AddToCart = ({ productId }) => {
     return (
         <div className="addToCartContainer">
             <div className="productQtyContainer">
-                <button onClick={handleDecrement} className="productQtyBtn"><img src="../images/icon-minus.svg" alt="-" /></button>
+                <button onClick={handleDecrement} className="productQtyBtn"><img src="./images/icon-minus.svg" alt="-" /></button>
                 <span id="productQtyNum">{quantity}</span>
-                <button onClick={handleIncrement} className="productQtyBtn"><img src="../images/icon-plus.svg" alt="+" /></button>
+                <button onClick={handleIncrement} className="productQtyBtn"><img src="./images/icon-plus.svg" alt="+" /></button>
             </div>
             <div className="addToCartBtnContainer">
-                <button onClick={handleAddToCart} className="addToCartBtn"><img id="addToCartIcon" src="../images/icon-cart.svg" alt="Cart" />Add to cart</button>
+                <button onClick={handleAddToCart} className="addToCartBtn"><img id="addToCartIcon" src="./images/icon-cart.svg" alt="Cart" />Add to cart</button>
             </div>
         </div>
     )

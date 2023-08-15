@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PopupGallery from './PopupGallery';
 
 const ThumbnailGallery = () => {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -9,17 +8,17 @@ const ThumbnailGallery = () => {
     };
 
     const fullSizeImages = [
-        '../images/image-product-1.jpg',
-        '../images/image-product-2.jpg',
-        '../images/image-product-3.jpg',
-        '../images/image-product-4.jpg',
+        './images/image-product-1.jpg',
+        './images/image-product-2.jpg',
+        './images/image-product-3.jpg',
+        './images/image-product-4.jpg',
     ];
 
     const thumbnailImages = [
-        '../images/image-product-1-thumbnail.jpg',
-        '../images/image-product-2-thumbnail.jpg',
-        '../images/image-product-3-thumbnail.jpg',
-        '../images/image-product-4-thumbnail.jpg',
+        './images/image-product-1-thumbnail.jpg',
+        './images/image-product-2-thumbnail.jpg',
+        './images/image-product-3-thumbnail.jpg',
+        './images/image-product-4-thumbnail.jpg',
     ];
 
     const handlePrevButtonClick = () => {
@@ -37,12 +36,11 @@ const ThumbnailGallery = () => {
                     src={fullSizeImages[selectedImageIndex]}
                     alt={`Image ${selectedImageIndex + 1}`}
                     className="large-image"
-                    onClick={PopupGallery}
                     draggable="false"
                 />
                 <div className="galleryBtnContainer">
-                    <button onClick={handlePrevButtonClick} class="galleryBtn"><img id="prevBtn" src="../images/icon-previous.svg" alt="Previous" /></button>
-                    <button onClick={handleNextButtonClick} class="galleryBtn"><img id="nextBtn" src="../images/icon-next.svg" alt="Next" /></button>
+                    <button onClick={handlePrevButtonClick} class="galleryBtn"><img id="prevBtn" src="./images/icon-previous.svg" alt="Previous" /></button>
+                    <button onClick={handleNextButtonClick} class="galleryBtn"><img id="nextBtn" src="./images/icon-next.svg" alt="Next" /></button>
                 </div>
             </div>
             <div className="thumbnails">
