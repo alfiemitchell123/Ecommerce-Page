@@ -7,8 +7,12 @@ import products from './ProductsData';
 const Cart = ({ product }) => {
     const { cartItems, removeAllItemsFromCart } = useCart();
 
+    const handleCartClick = (event) => {
+        event.stopPropagation();
+    }
+
     return (
-        <div className="cart">
+        <div className="cart" onClick={handleCartClick}>
             <h4 id="cartTitle">Cart</h4>
             <hr />
             {cartItems.length === 0 ? (
@@ -21,12 +25,19 @@ const Cart = ({ product }) => {
                         const product = products.find(product => product.id === cartItem.productId);
                         if (product) {
                             return (
-                                <li class="cartItem" key={product.id}>
-                                    <img id="cartProductImg" src={productImage} alt="Img" />
-                                    <p id="cartProductTitle">{product.name}</p>
-                                    <p id="cartProductPrice">${(product.price).toFixed(2)} x {cartItem.quantity} <b>${(product.price * cartItem.quantity).toFixed(2)}</b></p>
-                                    <img id="deleteBtn" onClick={removeAllItemsFromCart} src={deleteIcon} alt="Delete" />
-                                </li>
+                                <div>
+                                    <li class="cartItem" key={product.id}>
+                                        <img id="cartProductImg" src={productImage} alt="Img" />
+                                        <div id="cartItemInfo">
+                                            <p id="cartProductTitle">{product.name}</p>
+                                            <p id="cartProductPrice">${(product.price).toFixed(2)} x {cartItem.quantity} <b>${(product.price * cartItem.quantity).toFixed(2)}</b></p>
+                                        </div>
+                                        <img id="deleteBtn" onClick={removeAllItemsFromCart} src={deleteIcon} alt="Delete" />
+                                    </li>
+                                    <div className="checkoutBtnContainer">
+                                        <button id="checkoutBtn" className="addToCartBtn">Checkout</button>
+                                    </div>
+                                </div>
                             );
                         } else {
                             return null;

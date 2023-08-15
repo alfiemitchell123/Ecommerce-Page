@@ -47,7 +47,7 @@ hr {
 
 .cart {
   width: 350px;
-  height: 200px;
+  height: 235px;
   background: white;
   box-shadow: 0px 10px 30px hsl(220, 14%, 75%);
   border-radius: 10px;
@@ -55,6 +55,7 @@ hr {
   top: 120%;
   right: -7%;
   z-index: 1000;
+  cursor: auto;
 }
 
 #cartTitle {
@@ -64,25 +65,67 @@ hr {
   padding-left: 20px;
 }
 
+#cartItemList {
+  padding: 0;
+  margin: 0;
+}
+
 .cartItem {
-  margin-top: 20px;
   list-style-type: none;
-  display: grid;
-  grid-template: 70px 1fr / 1fr;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
 }
 
 #cartProductImg {
-  display: inline;
+  margin-right: 1rem;
   width: 50px;
   height: 50px;
   border-radius: 5px;
+}
+
+#cartItemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#cartProductTitle,
+#cartProductPrice {
+  color: hsl(219, 9%, 45%);
+  margin: 0;
+}
+
+#cartProductPrice b {
+  color: black;
+  margin-left: 5px;
+}
+
+#deleteBtn {
+  cursor: pointer;
+}
+
+#deleteBtn:hover {
+  filter: invert(12%) sepia(9%) saturate(714%) hue-rotate(179deg) brightness(93%) contrast(98%);
+}
+
+.checkoutBtnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+
+#checkoutBtn {
+  box-shadow: none;
 }
 
 .cartEmptyContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 65px;
 }
 
 .cartEmptyContainer p {
@@ -197,6 +240,10 @@ hr {
   outline: inherit;
 }
 
+.addToCartBtn:hover {
+  background-color: hsl(26, 100%, 60%);
+}
+
 .cartTotalContainer {
   display: flex;
   justify-content: center;
@@ -294,6 +341,7 @@ hr {
   border-radius: 5px;
   vertical-align: middle;
   text-align: center;
+  margin-right: auto;
 }
 
 .oldPrice {
@@ -395,9 +443,15 @@ hr {
     margin: 0 1.5em 6em;
   }
 
+  .priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .oldPrice {
     display: inline;
-    float: right;
+    vertical-align: middle;
   }
 
   .large-image {
@@ -447,5 +501,10 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+
+  .cart {
+    box-shadow: none;
   }
 }
